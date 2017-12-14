@@ -27,6 +27,6 @@ public abstract class Character {
     }
 
     public void killed(){
-        System.out.println("DEAD!!!");
+        System.out.println(this.getClass().getSimpleName() + " DEAD!!!");
     }
 }

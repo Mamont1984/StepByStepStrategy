@@ -42,7 +42,7 @@ public class Game {
 
 
                 try {
-                    sleep(500);
+                    sleep(300);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -58,12 +58,15 @@ public class Game {
                 character.setBuffed(false);
                 if (defender.isDefeated()) {
                     gameOver = true;
-                    System.out.println("GAME OVER!");
+                    System.out.println("===========================================");
+                    System.out.println("                GAME OVER!");
+                    System.out.println("===========================================");
                     break;
                 }
             }
 
             playersTurn = !playersTurn;
+            System.out.println("===========================================");
         }
     }
 }

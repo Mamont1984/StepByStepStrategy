@@ -11,6 +11,7 @@ public class HumanArcher extends Human implements Archer {
 
     @Override
     public void act(Character attacker, Character defender) {
+        if (isBuffed()) System.out.print("! ");
         if (random.nextBoolean()) {
             defender.takeDamage(longRangeAttack());
         } else {
@@ -21,14 +22,14 @@ public class HumanArcher extends Human implements Archer {
     @Override
     public int longRangeAttack() {
         int dmg = this.isBuffed() ? (int) (longRangeAttack * 1.5) : longRangeAttack;
-        System.out.println(this.getClass().getCanonicalName() + " crossbow attack ( HIT " + dmg + " HP!!! )");
+        System.out.println(this.getClass().getSimpleName() + " crossbow attack ( HIT " + dmg + " HP!!! )");
         return dmg;
     }
 
     @Override
     public int meleeAttack() {
         int dmg = this.isBuffed() ? (int) (meleeAttack * 1.5) : meleeAttack;
-        System.out.println(this.getClass().getCanonicalName() + " melee attack ( HIT " + dmg + " HP!!! )");
+        System.out.println(this.getClass().getSimpleName() + " melee attack ( HIT " + dmg + " HP!!! )");
         return dmg;
     }
 }

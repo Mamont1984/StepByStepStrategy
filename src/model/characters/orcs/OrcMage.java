@@ -9,6 +9,7 @@ public class OrcMage extends Orc implements Mage {
 
     @Override
     public void act(Character attacker, Character defender) {
+        if (isBuffed()) System.out.print("! ");
         if (random.nextBoolean()) {
             attacker.setBuffed(buff());
         } else {
@@ -18,14 +19,14 @@ public class OrcMage extends Orc implements Mage {
 
     @Override
     public boolean buff() {
-        System.out.println(this.getClass().getCanonicalName() + " buff!");
+        System.out.println(this.getClass().getSimpleName() + " buff!");
         return true;
     }
 
     @Override
     public int magicAttack() {
         int dmg = this.isBuffed() ? (int) (magicAttack * 1.5) : magicAttack;
-        System.out.println(this.getClass().getCanonicalName() + " magic attack ( HIT " + dmg + " HP!!! )");
+        System.out.println(this.getClass().getSimpleName() + " magic attack ( HIT " + dmg + " HP!!! )");
         return dmg;
     }
 }

@@ -15,8 +15,8 @@ public abstract class AbstractSquad implements Squad {
     public List<Character> getCharactersList() {
         Collections.shuffle(characterList);
         Collections.sort(characterList, (o1, o2) -> {
-            if (o1.isBuffed() && !o2.isBuffed()) return 1;
-            if (!o1.isBuffed() && o2.isBuffed())return -1;
+            if (o1.isBuffed() && !o2.isBuffed()) return -1;
+            if (!o1.isBuffed() && o2.isBuffed())return 1;
             else return 0;
         });
         return characterList;
