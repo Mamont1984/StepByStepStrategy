@@ -7,15 +7,15 @@ import model.forces.LightForces;
 
 public class HumanSquad extends AbstractSquad implements LightForces {
     public HumanSquad() {
-        characterList.add(new HumanMage());
+        charactersList.add(new HumanMage());
 
-        characterList.add(new HumanArcher());
-        characterList.add(new HumanArcher());
-        characterList.add(new HumanArcher());
+        charactersList.add(new HumanArcher());
+        charactersList.add(new HumanArcher());
+        charactersList.add(new HumanArcher());
 
-        characterList.add(new HumanWarrior());
-        characterList.add(new HumanWarrior());
-        characterList.add(new HumanWarrior());
-        characterList.add(new HumanWarrior());
+        charactersList.add(new HumanWarrior());
+        charactersList.add(new HumanWarrior());
+        charactersList.add(new HumanWarrior());
+        charactersList.add(new HumanWarrior());
     }
 }

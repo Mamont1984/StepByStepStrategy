@@ -23,7 +23,7 @@ public class ElfMage extends Elf implements Mage  {
     }
 
     public int magicAttack() {
-        int dmg = this.isBuffed() ? (int) (magicAttack * 1.5) : magicAttack;
+        int dmg = (int) (magicAttack * getEffectsModificator());
         System.out.print(this.getClass().getSimpleName() + " magic attack ( HIT " + dmg + " HP!!! )");
         return dmg;
     }

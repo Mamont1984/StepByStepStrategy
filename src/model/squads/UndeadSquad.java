@@ -7,15 +7,15 @@ import model.forces.DarkForces;
 
 public class UndeadSquad extends AbstractSquad implements DarkForces {
     public UndeadSquad() {
-        characterList.add(new UndeadMage());
+        charactersList.add(new UndeadMage());
 
-        characterList.add(new UndeadArcher());
-        characterList.add(new UndeadArcher());
-        characterList.add(new UndeadArcher());
+        charactersList.add(new UndeadArcher());
+        charactersList.add(new UndeadArcher());
+        charactersList.add(new UndeadArcher());
 
-        characterList.add(new UndeadWarrior());
-        characterList.add(new UndeadWarrior());
-        characterList.add(new UndeadWarrior());
-        characterList.add(new UndeadWarrior());
+        charactersList.add(new UndeadWarrior());
+        charactersList.add(new UndeadWarrior());
+        charactersList.add(new UndeadWarrior());
+        charactersList.add(new UndeadWarrior());
     }
 }

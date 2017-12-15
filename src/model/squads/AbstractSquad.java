@@ -8,32 +8,32 @@ import java.util.List;
 import java.util.Random;
 
 public abstract class AbstractSquad implements Squad {
+    protected List<Character> charactersList = new ArrayList<>();
     private Random random = new Random();
-    protected List<Character> characterList = new ArrayList<>();
 
     @Override
     public List<Character> getCharactersList() {
-        Collections.shuffle(characterList);
-        Collections.sort(characterList, (o1, o2) -> {
+        Collections.shuffle(charactersList);
+        Collections.sort(charactersList, (o1, o2) -> {
             if (o1.isBuffed() && !o2.isBuffed()) return -1;
             if (!o1.isBuffed() && o2.isBuffed())return 1;
             else return 0;
         });
-        return characterList;
+        return charactersList;
     }
 
     @Override
     public Character getRandomCharacter() {
-        return characterList.get(random.nextInt(characterList.size()));
+        return charactersList.get(random.nextInt(charactersList.size()));
     }
 
     @Override
     public boolean isDefeated() {
-        return characterList.isEmpty();
+        return charactersList.isEmpty();
     }
 
     @Override
     public void removeKilledCharacter(Character character) {
-        characterList.remove(character);
+        charactersList.remove(character);
     }
 }

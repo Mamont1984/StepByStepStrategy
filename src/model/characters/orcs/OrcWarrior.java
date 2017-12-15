@@ -8,14 +8,12 @@ public class OrcWarrior extends Orc implements Warrior {
 
     @Override
     public void act(Character attacker, Character defender) {
-        if (isBuffed()) System.out.print("! ");
         defender.takeDamage(meleeAttack());
-
     }
 
     @Override
     public int meleeAttack() {
-        int dmg = this.isBuffed() ? (int) (meleeAttack * 1.5) : meleeAttack;
+        int dmg = (int) (meleeAttack * getEffectsModificator());
         System.out.print(this.getClass().getSimpleName() + " club attack ( HIT " + dmg + " HP!!! )");
         return dmg;
     }

@@ -4,26 +4,25 @@ import model.characters.Character;
 import model.characters.Mage;
 
 public class UndeadMage extends Undead implements Mage {
-    private int magicAttack = 8;
+    private int magicAttack = 5;
 
     @Override
     public void act(Character attacker, Character defender) {
-        if (isBuffed()) System.out.print("! ");
         if (random.nextBoolean()) {
-            attacker.setBuffed(buff());
+            defender.setDiseased(disease());
         } else {
             defender.takeDamage(magicAttack());
         }
     }
 
-    public boolean buff() {
-        System.out.print(this.getClass().getSimpleName() + " TODO buff!");
+    public boolean disease() {
+        System.out.print(this.getClass().getSimpleName() + " disease!");
         return true;
     }
 
     public int magicAttack() {
-        int dmg = this.isBuffed() ? (int) (magicAttack * 1.5) : magicAttack;
-        System.out.print(this.getClass().getSimpleName() + " TODO magic attack ( HIT " + dmg + " HP!!! )");
+        int dmg = (int) (magicAttack * getEffectsModificator());
+        System.out.print(this.getClass().getSimpleName() + " magic attack ( HIT " + dmg + " HP!!! )");
         return dmg;
     }
 }

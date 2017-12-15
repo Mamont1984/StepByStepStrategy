@@ -6,7 +6,7 @@ import model.squads.Squad;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StandardSquadBuilder implements SquadBuilder {
+public abstract class StandardSquadBuilder implements SquadBuilder {
 
     List<Character> lightSquads = new ArrayList<>();
     List<Character> darkSquads = new ArrayList<>();

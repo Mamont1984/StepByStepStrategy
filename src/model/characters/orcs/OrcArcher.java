@@ -10,7 +10,6 @@ public class OrcArcher extends Orc implements Archer {
 
     @Override
     public void act(Character attacker, Character defender) {
-        if (isBuffed()) System.out.print("! ");
         if (random.nextBoolean()) {
             defender.takeDamage(longRangeAttack());
         } else {
@@ -20,14 +19,14 @@ public class OrcArcher extends Orc implements Archer {
 
     @Override
     public int longRangeAttack() {
-        int dmg = this.isBuffed() ? (int) (longRangeAttack * 1.5) : longRangeAttack;
+        int dmg = (int) (longRangeAttack * getEffectsModificator());
         System.out.print(this.getClass().getSimpleName() + " bow attack ( HIT " + dmg + " HP!!! )");
         return dmg;
     }
 
     @Override
     public int meleeAttack() {
-        int dmg = this.isBuffed() ? (int) (meleeAttack * 1.5) : meleeAttack;
+        int dmg = (int) (meleeAttack * getEffectsModificator());
         System.out.print(this.getClass().getSimpleName() + " blade attack ( HIT " + dmg + " HP!!! )");
         return dmg;
     }

@@ -7,15 +7,15 @@ import model.forces.LightForces;
 
 public class ElvesSquad extends AbstractSquad implements LightForces {
     public ElvesSquad() {
-        characterList.add(new ElfMage());
+        charactersList.add(new ElfMage());
 
-        characterList.add(new ElfArcher());
-        characterList.add(new ElfArcher());
-        characterList.add(new ElfArcher());
+        charactersList.add(new ElfArcher());
+        charactersList.add(new ElfArcher());
+        charactersList.add(new ElfArcher());
 
-        characterList.add(new ElfWarrior());
-        characterList.add(new ElfWarrior());
-        characterList.add(new ElfWarrior());
-        characterList.add(new ElfWarrior());
+        charactersList.add(new ElfWarrior());
+        charactersList.add(new ElfWarrior());
+        charactersList.add(new ElfWarrior());
+        charactersList.add(new ElfWarrior());
     }
 }

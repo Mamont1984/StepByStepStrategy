@@ -13,10 +13,11 @@ public class Game {
     private Squad squad1;
     private Squad squad2;
     private boolean playersTurn = random.nextBoolean();
+    private int turnNumber = 0;
 
     public Game() {
-        squad1 = new ElvesSquad();
-        squad2 = new OrcsSquad();
+        squad1 = new HumanSquad();
+        squad2 = new UndeadSquad();
     }
 
     public static void main(String[] args) {
@@ -25,22 +26,23 @@ public class Game {
 
     private void go() {
         while (!gameOver) {
+            System.out.println("           Turn #" + turnNumber++);
             Squad attacker;
             Squad defender;
-            if (playersTurn) {
-                attacker = squad1;
-                defender = squad2;
-            } else {
-                attacker = squad2;
-                defender = squad1;
-            }
+                if (playersTurn) {
+                    attacker = squad1;
+                    defender = squad2;
+                } else {
+                    attacker = squad2;
+                    defender = squad1;
+                }
 
             List<Character> characterList = attacker.getCharactersList();
             for (Character character : characterList) {
 
 
                 try {
-                    sleep(300);
+                    sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -48,16 +50,18 @@ public class Game {
 
                 Character friend = attacker.getRandomCharacter();
                 Character enemy = defender.getRandomCharacter();
-                character.act(friend, enemy);
-                if (!enemy.isAlive()) {
-                    enemy.killed();
-                    defender.removeKilledCharacter(enemy);
-                }
-                character.setBuffed(false);
-                if (defender.isDefeated()) {
-                    gameOver = true;
-                    System.out.println("===========================================");
-                    System.out.println("                GAME OVER!");
+                    character.act(friend, enemy);
+                    if (!enemy.isAlive()) {
+                        defender.removeKilledCharacter(enemy);
+                    }
+
+                    character.resetBuff();
+                    character.resetDisease();
+
+                    if (defender.isDefeated()) {
+                        gameOver = true;
+                        System.out.println("===========================================");
+                        System.out.println("                GAME OVER!");
                     break;
                 }
             }

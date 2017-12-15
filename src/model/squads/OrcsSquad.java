@@ -7,15 +7,15 @@ import model.forces.DarkForces;
 
 public class OrcsSquad extends AbstractSquad implements DarkForces {
     public OrcsSquad() {
-        characterList.add(new OrcMage());
+        charactersList.add(new OrcMage());
 
-        characterList.add(new OrcArcher());
-        characterList.add(new OrcArcher());
-        characterList.add(new OrcArcher());
+        charactersList.add(new OrcArcher());
+        charactersList.add(new OrcArcher());
+        charactersList.add(new OrcArcher());
 
-        characterList.add(new OrcWarrior());
-        characterList.add(new OrcWarrior());
-        characterList.add(new OrcWarrior());
-        characterList.add(new OrcWarrior());
+        charactersList.add(new OrcWarrior());
+        charactersList.add(new OrcWarrior());
+        charactersList.add(new OrcWarrior());
+        charactersList.add(new OrcWarrior());
     }
 }

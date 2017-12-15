@@ -19,14 +19,14 @@ public class ElfArcher extends Elf implements Archer {
 
     @Override
     public int longRangeAttack() {
-        int dmg = longRangeAttack * buff * disease;
+        int dmg = (int) (longRangeAttack * getEffectsModificator());
         System.out.print(this.getClass().getSimpleName() + " bow attack ( HIT " + dmg + " HP!!! )");
         return dmg;
     }
 
     @Override
     public int meleeAttack() {
-        int dmg = meleeAttack * buff * disease;
+        int dmg = (int) (meleeAttack * getEffectsModificator());
         System.out.print(this.getClass().getSimpleName() + " melee attack ( HIT " + dmg + " HP!!! )");
         return dmg;
     }
