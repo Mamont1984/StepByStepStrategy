@@ -5,8 +5,8 @@ import model.characters.Character;
 
 public class OrcArcher extends Orc implements Archer {
 
-    private int longRangeAttack = 6;
-    private int meleeAttack = 4;
+    private int longRangeAttack = 3;
+    private int meleeAttack = 2;
 
     @Override
     public void act(Character attacker, Character defender) {
@@ -21,14 +21,14 @@ public class OrcArcher extends Orc implements Archer {
     @Override
     public int longRangeAttack() {
         int dmg = this.isBuffed() ? (int) (longRangeAttack * 1.5) : longRangeAttack;
-        System.out.println(this.getClass().getSimpleName() + " crossbow attack ( HIT " + dmg + " HP!!! )");
+        System.out.print(this.getClass().getSimpleName() + " bow attack ( HIT " + dmg + " HP!!! )");
         return dmg;
     }
 
     @Override
     public int meleeAttack() {
         int dmg = this.isBuffed() ? (int) (meleeAttack * 1.5) : meleeAttack;
-        System.out.println(this.getClass().getSimpleName() + " melee attack ( HIT " + dmg + " HP!!! )");
+        System.out.print(this.getClass().getSimpleName() + " blade attack ( HIT " + dmg + " HP!!! )");
         return dmg;
     }
 }

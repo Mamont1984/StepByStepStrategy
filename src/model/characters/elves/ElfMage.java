@@ -1,15 +1,15 @@
-package model.characters.humans;
+package model.characters.elves;
 
 import model.characters.Character;
 import model.characters.Mage;
+import model.characters.humans.Human;
 
-public class HumanMage extends Human implements Mage  {
+public class ElfMage extends Elf implements Mage  {
 
-    private int magicAttack = 4;
+    private int magicAttack = 10;
 
     @Override
     public void act(Character attacker, Character defender) {
-        if (isBuffed()) System.out.print("! ");
         if (random.nextBoolean()) {
             attacker.setBuffed(buff());
         } else {
@@ -18,7 +18,7 @@ public class HumanMage extends Human implements Mage  {
     }
 
     public boolean buff() {
-        System.out.print(this.getClass().getSimpleName() + " buffed");
+        System.out.print(this.getClass().getSimpleName() + " buff!");
         return true;
     }
 

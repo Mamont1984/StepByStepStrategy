@@ -6,23 +6,25 @@ public abstract class Character {
 
     protected Random random = new Random();
     private int health = 100;
-    private boolean buffed;
+    protected int buff = 1;
+    protected int disease = 1;
 
-    public boolean isBuffed() {
-        return buffed;
+    public void setBuff(int buff) {
+        this.buff = buff;
+    }
+
+    public void setDisease(int disease) {
+        this.disease = disease;
     }
 
     abstract public void act(Character attacker, Character defender);
-
-    public void setBuffed(boolean buffed) {
-        this.buffed = buffed;
-    }
 
     public boolean isAlive(){
         return health > 0 ? true :false;
     }
 
     public void takeDamage(int dmg){
+        System.out.println(" " + this.getClass().getSimpleName());
         this.health -= dmg;
     }
 

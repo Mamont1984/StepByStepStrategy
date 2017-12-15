@@ -1,11 +1,10 @@
-package model.characters.humans;
+package model.characters.undeads;
 
 import model.characters.Character;
 import model.characters.Mage;
 
-public class HumanMage extends Human implements Mage  {
-
-    private int magicAttack = 4;
+public class UndeadMage extends Undead implements Mage {
+    private int magicAttack = 8;
 
     @Override
     public void act(Character attacker, Character defender) {
@@ -18,13 +17,13 @@ public class HumanMage extends Human implements Mage  {
     }
 
     public boolean buff() {
-        System.out.print(this.getClass().getSimpleName() + " buffed");
+        System.out.print(this.getClass().getSimpleName() + " TODO buff!");
         return true;
     }
 
     public int magicAttack() {
         int dmg = this.isBuffed() ? (int) (magicAttack * 1.5) : magicAttack;
-        System.out.print(this.getClass().getSimpleName() + " magic attack ( HIT " + dmg + " HP!!! )");
+        System.out.print(this.getClass().getSimpleName() + " TODO magic attack ( HIT " + dmg + " HP!!! )");
         return dmg;
     }
 }

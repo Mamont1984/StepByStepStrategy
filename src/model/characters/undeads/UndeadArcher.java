@@ -1,13 +1,12 @@
-package model.characters.humans;
+package model.characters.undeads;
 
 import model.characters.Archer;
 import model.characters.Character;
-import model.squads.Squad;
 
-public class HumanArcher extends Human implements Archer {
+public class UndeadArcher extends Undead implements Archer {
 
-    private int longRangeAttack = 5;
-    private int meleeAttack = 3;
+    private int longRangeAttack = 4;
+    private int meleeAttack = 2;
 
     @Override
     public void act(Character attacker, Character defender) {
@@ -22,7 +21,7 @@ public class HumanArcher extends Human implements Archer {
     @Override
     public int longRangeAttack() {
         int dmg = this.isBuffed() ? (int) (longRangeAttack * 1.5) : longRangeAttack;
-        System.out.print(this.getClass().getSimpleName() + " crossbow attack ( HIT " + dmg + " HP!!! )");
+        System.out.print(this.getClass().getSimpleName() + " bow attack ( HIT " + dmg + " HP!!! )");
         return dmg;
     }
 

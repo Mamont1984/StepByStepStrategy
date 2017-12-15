@@ -1,7 +1,5 @@
 import model.characters.Character;
-import model.squads.HumanSquad;
-import model.squads.OrcsSquad;
-import model.squads.Squad;
+import model.squads.*;
 
 import java.util.List;
 import java.util.Random;
@@ -17,7 +15,7 @@ public class Game {
     private boolean playersTurn = random.nextBoolean();
 
     public Game() {
-        squad1 = new HumanSquad();
+        squad1 = new ElvesSquad();
         squad2 = new OrcsSquad();
     }
 
@@ -60,7 +58,6 @@ public class Game {
                     gameOver = true;
                     System.out.println("===========================================");
                     System.out.println("                GAME OVER!");
-                    System.out.println("===========================================");
                     break;
                 }
             }

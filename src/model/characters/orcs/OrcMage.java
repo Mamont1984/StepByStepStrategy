@@ -5,7 +5,6 @@ import model.characters.Mage;
 import model.squads.Squad;
 
 public class OrcMage extends Orc implements Mage {
-    private int magicAttack = 8;
 
     @Override
     public void act(Character attacker, Character defender) {
@@ -13,20 +12,17 @@ public class OrcMage extends Orc implements Mage {
         if (random.nextBoolean()) {
             attacker.setBuffed(buff());
         } else {
-            defender.takeDamage(magicAttack());
+            defender.setBuffed(unBuff());
         }
     }
 
-    @Override
     public boolean buff() {
-        System.out.println(this.getClass().getSimpleName() + " buff!");
+        System.out.print(this.getClass().getSimpleName() + " buff!");
         return true;
     }
 
-    @Override
-    public int magicAttack() {
-        int dmg = this.isBuffed() ? (int) (magicAttack * 1.5) : magicAttack;
-        System.out.println(this.getClass().getSimpleName() + " magic attack ( HIT " + dmg + " HP!!! )");
-        return dmg;
+    public boolean unBuff() {
+        System.out.print(this.getClass().getSimpleName() + " debuff!");
+        return false;
     }
 }
