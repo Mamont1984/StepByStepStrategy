@@ -1,4 +1,4 @@
-package model.characters.factories;
+package model.factories;
 
 import model.characters.Archer;
 import model.characters.Mage;
